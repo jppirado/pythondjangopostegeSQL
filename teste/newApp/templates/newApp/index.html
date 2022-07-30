@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head> 
+    <meta charset="UTF-8">
+    <title>Pagina de perguntas </title>
+  </head>
+  <body>
+    {% if  lestPubliList %}
+    <ul>
+      {%for question in lestPubliList %}
+      <li> <a href = "{%url 'newApp:vote' question.id %}">{{question.question_text}} </a> </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      <p>Não possuem perguntas</p>
+    {% endif%}
+  </body> 
+</html>  
